@@ -142,37 +142,6 @@ public class GUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button[0][0]){
-            player(0, 0, humanPlay);
-        }
-        if (e.getSource() == button[0][1]){
-            player(0, 1, humanPlay);
-        }
-        if (e.getSource() == button[0][2]){
-            player(0, 2, humanPlay);
-        }
-        if (e.getSource() == button[1][0]){
-            player(1, 0, humanPlay);
-        }
-        if (e.getSource() == button[1][1]){
-            player(1, 1, humanPlay);
-        }
-        if (e.getSource() == button[1][2]){
-            player(1, 2, humanPlay);
-        }
-        if (e.getSource() == button[2][0]){
-            player(2, 0, humanPlay);
-        }
-        if (e.getSource() == button[2][1]){
-            player(2, 1, humanPlay);
-        }
-        if (e.getSource() == button[2][2]){
-            player(2, 2, humanPlay);
-        }
-
-        if (e.getSource() == rbutton){
-            resetButton();
-        }
 
         if(e.getSource() == xbutton){
             humanPlay = "X";
@@ -195,6 +164,18 @@ public class GUI extends JFrame implements ActionListener {
                     button[i][j].setEnabled(true);
                 }
             }
+        }
+
+        for(int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++) {
+                if (e.getSource() == button[i][j]){
+                    player(i, j, humanPlay);
+                }
+            }
+        }
+
+        if (e.getSource() == rbutton){
+            resetButton();
         }
 
     }
